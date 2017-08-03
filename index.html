@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Tablero</title>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ajedrez</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
-	<label>Numero de Lados: <input type="text" id="n_Lados"><button id="dibujaTabla">Agregar</button></label>
-	<table id="tablero" border="1">
-		
-	</table >
-	<br>
-	<table id="tablero1" border="1"></table>
+    <div class="">
+        <p>Numero de lados</p>
+        <p><input type='text' id="lados" size='4' /> 
+            <button id='ejecutar'>Generar Tabla</button>
+            <button id="pasoApaso">Paso a Paso</button></p>
+    </div>
+    <div id="tablero">
+    </div>
+    <script src="js/main.js">
+    </script>
 </body>
-<script type="text/javascript" src="js/main.js"></script>
 </html>
