@@ -129,12 +129,13 @@ generar.onclick = function () {
         var fila = document.createElement('tr');
         for (var j = 0; j < n; j++) {
             var celda = document.createElement('td');
+            celda.setAttribute('id', i+''+j);
             if (i % 2 == 0 && j % 2 != 0 || i % 2 != 0 && j % 2 == 0) {
                 celda.setAttribute('class', 'negro');
             }
-            var p = document.createElement('p');
-            p.innerHTML = M[i][j];
-            celda.appendChild(p);
+            var text = document.createTextNode(M[i][j]);
+            //p.innerHTML = M[i][j];
+            celda.appendChild(text);
             
             fila.appendChild(celda);
         }
@@ -144,14 +145,20 @@ generar.onclick = function () {
 }
 
 var btnPasoAPaso = document.getElementById('pasoApaso');
+contador = 0;
 btnPasoAPaso.onclick = function(){
   var celdasTablero = document.getElementsByTagName('td');
-  console.log(matrizEureka);
-  console.log(celdasTablero.length);
-  //var i = 0;
   for(var i = 0; i < celdasTablero.length; i++){
-    var x = celdasTablero[i].textContent;
-    console.log(x);
+    var x = celdasTablero[i].id;
+    //celdasTablero[i].textContent = "";
   }
-
+  contador ++;
+  for(var i in matrizEureka){
+    for (var j in matrizEureka) {
+      if(matrizEureka[i][j] == contador){
+        sig_movida = matrizEureka[i][j]
+      }
+  }
+}
+console.log(contador +"-"+ sig_movida);
 }
