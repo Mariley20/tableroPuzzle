@@ -122,7 +122,9 @@ function gen_solution (M, helper, n) {
         break;
       }
     }
+    
     matrizEureka = M;
+
     var tabla = document.createElement('table');
     tabla.border = "1";
     for (var i = 0; i < n; i++) {
