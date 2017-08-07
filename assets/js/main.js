@@ -1,6 +1,6 @@
 var generar = document.getElementById('ejecutar');
 var tablero = document.getElementById('tablero');
-var matrizEureka;
+var matrizEureka; //
 var num;
 
 function printMatrix(M) {
@@ -155,9 +155,11 @@ generar.onclick = function () {
 }
 
 var btnPasoAPaso = document.getElementById('pasoApaso');
-contador = 0;
+contador = 0; //contar paso tras paso
 
 btnPasoAPaso.onclick = function () {
+
+    //---limpiar tablero
     var celdasTablero = document.getElementsByTagName('td');
     if (contador == 0) {
         for (var i = 0; i < celdasTablero.length; i++) {
@@ -165,6 +167,8 @@ btnPasoAPaso.onclick = function () {
             celdasTablero[i].textContent = "";
         }
     }
+    //----
+    // --- buscar posicion de siguiente movida
     contador++;
     if (contador <= (Math.pow(matrizEureka.length, 2))) {
         for (var i in matrizEureka) {
@@ -174,6 +178,7 @@ btnPasoAPaso.onclick = function () {
                 var movida = matrizEureka[i][j];
             }
         }
+        // se imprime la movida
         document.getElementById(ids).innerHTML = movida;
     } else {
         alert("ya no hay mas movidas")
@@ -183,5 +188,5 @@ btnPasoAPaso.onclick = function () {
 
 btnSigSolucion = document.getElementById('sig_Solucion');
 btnSigSolucion.onclick = function(){
-    generar();
+    //generar();
 }
